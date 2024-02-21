@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('assets\bg_img.png') center/cover fixed; /* Replace 'background-image.jpg' with your actual image URL */
+  background: url('bg_img.png') center/cover fixed; /* Replace 'background-image.jpg' with your actual image URL */
   font-family: 'Arial', sans-serif;
   color: #ffffff;
   overflow: hidden;
@@ -46,7 +46,7 @@ section {
   position: fixed;
   width: 30px;
   height: 30px;
-  background: url('assets\star.png') no-repeat center/cover;
+  background: url('star.png') no-repeat center/cover;
   pointer-events: none;
   transform-origin: center;
   transition: transform 0.1s;
