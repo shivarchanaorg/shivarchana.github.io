@@ -1,11 +1,25 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('bg_img.png') center/cover fixed; /* Replace 'background-image.jpg' with your actual image URL */
   font-family: 'Arial', sans-serif;
   color: #ffffff;
   overflow: hidden;
   cursor: none;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('bg_img.png') center/cover fixed;
+  filter: brightness(50%); /* Adjust the brightness percentage as needed */
+}
+
+#content-container {
+  position: relative;
+  z-index: 2;
 }
 
 nav {
@@ -17,6 +31,7 @@ nav {
   padding: 10px;
   box-sizing: border-box;
   display: none;
+  z-index: 3;
 }
 
 header {
@@ -48,10 +63,7 @@ section {
   pointer-events: none;
   transform-origin: center;
   transition: transform 0.1s;
-  z-index: 9999;
-
-  left: -100px;
-  top: -100px;
+  z-index: 4;
 }
 
 /* Custom cursor trail */
@@ -62,5 +74,6 @@ section {
   background-color: purple;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 3;
 }
+
