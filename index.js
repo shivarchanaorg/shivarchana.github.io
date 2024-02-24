@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       };
 
+      // Adjust the timeout for a shorter trail duration
       setTimeout(() => {
         updateSize();
-      }, 20 * i); // Adjust the timeout for the trail duration
+      }, 10 * i); // Adjust the timeout for the trail duration
     }
 
     prevX = x;
