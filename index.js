@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
       trail.className = 'cursor-trail';
       const trailSize = 12; // Set the initial size of the trail
 
-      // Calculate aging rate based on movement speed
-      const agingRate = Math.max(1, speed * 0.1); // Adjust the aging rate factor as needed
+      // Calculate faster aging rate based on movement speed
+      const agingRate = Math.max(1, speed * 0.5); // Adjust the aging rate factor as needed
 
       trail.style.width = `${trailSize}px`;
       trail.style.height = `${trailSize}px`;
