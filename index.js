@@ -2,6 +2,14 @@ const customCursor = document.getElementById('custom-cursor');
 let isCursorVisible = true;
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Check if the device is a mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  // If the device is mobile, hide the custom cursor
+  if (isMobile) {
+    customCursor.style.display = 'none';
+  }
+
   let prevX, prevY;
   let lastMoveTime = Date.now();
 
@@ -21,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const speedY = prevY ? Math.abs(y - prevY) / deltaTime : 0;
     const speed = Math.sqrt(speedX ** 2 + speedY ** 2);
 
-    // Reset the visibility flag and show the cursor
-    isCursorVisible = true;
-    customCursor.style.display = 'block';
+    // Reset the visibility flag and show the cursor (if not on mobile)
+    isCursorVisible = !isMobile;
+    customCursor.style.display = isCursorVisible ? 'block' : 'none';
 
     // Increase trail quality by adding more trail elements
     const trailDensity = 20; // Adjust the density of trail elements (increase for more dots)
@@ -72,10 +80,11 @@ document.addEventListener('DOMContentLoaded', function () {
     customCursor.style.display = 'none';
   });
 
-  // Periodically check if the mouse is over the window and show the cursor if needed
+  // Periodically check if the mouse is over the window and show the cursor (if not on mobile)
   setInterval(() => {
     if (isCursorVisible) {
       customCursor.style.display = 'block';
     }
   }, 1000); // Adjust the interval as needed
 });
+
